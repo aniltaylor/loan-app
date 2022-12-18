@@ -1,0 +1,27 @@
+<!--
+  Title: interest.component.html
+  Author: Anita Taylor
+  Date: 11 December 2022
+  Description: Loan application
+-->
+
+<mat-card class="payment-card mat-elevation-z0">
+  <mat-card-subtitle
+    class="payment-sub"
+    class="payment-sub"
+    style="text-align: center; font-size: 24px"
+    >Your Interest Paid:</mat-card-subtitle
+  >
+  <div>
+    <mat-card-content>
+      <div
+        class="payment-content"
+        class="payment-sub"
+        style="text-align: center; font-size: 24px"
+      >
+        <!-- Passed In values monthlypayment -->
+        {{ "$" + (interest | number : "1.2-2") }}
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>

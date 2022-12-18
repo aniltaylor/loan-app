@@ -1,0 +1,31 @@
+
+<mat-toolbar style="background-color: #fb7e00; color: #ffa700;">
+  <mat-toolbar-row>
+
+      < fxLayout="row wrap" fxLayoutAlign="end start">
+        <button mat-button routerLink="/about">About</button>
+        <button mat-button routerLink="/contact">Contact</button>
+        <button mat-button routerLink="/home">home</button>
+
+      </div>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<br>
+
+<div fxLayout="row wrap">
+
+  <div fxFlex>
+
+    <mat-card class="main-container mat-elevation-z0" style="background-color: #890000">
+      <mat-card-title style="text-align: center;">All Loans</mat-card-title>
+      <br><br>
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+
+</div>

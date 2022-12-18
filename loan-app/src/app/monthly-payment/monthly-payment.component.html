@@ -1,0 +1,33 @@
+<mat-card class="payment-card mat-elevation-z0">
+  <mat-card-subtitle
+    class="payment-sub"
+    style="text-align: center; font-size: 24px"
+    >Your Monthly Payment:</mat-card-subtitle
+  >
+  <div>
+    <mat-card-content>
+      <div
+        class="payment-content"
+        class="payment-sub"
+        style="text-align: center; font-size: 24px"
+      >
+        <!-- Passed In value monthlypayment -->
+        {{ "$" + (monthlyPayment | number : "1.2-2") }}
+      </div>
+    </mat-card-content>
+  </div>
+</mat-card>
+
+<!-- <div style="text-align: center">
+  <mat-label for="loanAmount">Your monthly payment:</mat-label>
+</div>
+<div style="text-align: center">
+  <mat-form-field fxFlex appearance="fill">
+    <input
+      type="text"
+      name="loanAmount"
+      matInput
+      formControlName="loanAmount"
+    />
+  </mat-form-field>
+</div> -->

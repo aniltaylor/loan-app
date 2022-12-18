@@ -1,0 +1,90 @@
+<div>
+  <h1
+    style="
+      text-align: center;
+      margin-top: -30px;
+      margin-bottom: 30px;
+      color: #eeba30;
+      font-weight: bold;
+    "
+  >
+    {{ loanApp }}
+  </h1>
+</div>
+
+<div fxLayout="row wrap" style="margin-bottom: 30px">
+  <div fxFlex>
+    <!-- left card contains a form with loan amount, interest rate, and number of years -->
+    <mat-card class="mat-elevation-z0">
+      <mat-card-content>
+        <form
+          fxLayout="column"
+          class="loan-form"
+          [formGroup]="loanFormCalculator"
+          (ngSubmit)="onSubmit()"
+        >
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label for="loanAmount">Loan Amount</mat-label>
+            <input
+              type="text"
+              name="loanAmount"
+              placeholder="ex: 10000.99"
+              matInput
+              formControlName="loanAmount"
+            />
+            <!-- <mat-error *ngIf="loanAmount.invalid>{{getErrorMessage()}}</mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Interest Rate</mat-label>
+            <input
+              type="text"
+              name="interestRate"
+              placeholder="ex: 4.50"
+              matInput
+              formControlName="interestRate"
+            />
+          </mat-form-field>
+
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Number of Years</mat-label>
+            <input
+              type="text"
+              name="numOfYears"
+              matInput
+              formControlName="numOfYears"
+            />
+          </mat-form-field>
+
+          <!-- Submit button -->
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="loanFormCalculator.invalid"
+          >
+            Submit
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div fxFlex>
+    <mat-card fxLayout="column" class="mat-elevation-z0">
+      <mat-card-content>
+        <app-monthly-payment
+          [monthlyPayment]="monthlyPayment"
+        ></app-monthly-payment>
+        <app-interest [app-interest]="interest"></app-interest>
+        <button
+          mat-button
+          (click)="clearEntries()"
+          class="clear-button"
+          style="background-color: #c0c0c0; color: #000000; float: right"
+        >
+          Clear
+        </button>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
